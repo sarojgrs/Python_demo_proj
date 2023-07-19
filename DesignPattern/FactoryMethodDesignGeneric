@@ -1,0 +1,50 @@
+from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
+    @abstractmethod
+    def speak(self):
+        pass
+
+    def eat(self):
+        print("Animal is eating.")
+
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+
+animal_config = {
+    "dog": Dog,
+    "cat": Cat,
+    # Add more animal types and their corresponding classes here
+}
+
+
+class AnimalFactory:
+    def create_animal(self, animal_type):
+        animal_class = animal_config.get(animal_type.lower())
+        if animal_class:
+            return animal_class()
+        else:
+            raise ValueError(f"Invalid animal type: {animal_type}")
+
+
+# Create objects using the AnimalFactory
+animal_factory = AnimalFactory()
+
+animal1 = animal_factory.create_animal("dog")
+animal1.eat()
+sound1 = animal1.speak()
+print(f"The animal says: {sound1}")
+
+animal2 = animal_factory.create_animal("cat")
+animal2.eat()
+sound2 = animal2.speak()
+print(f"The animal says: {sound2}")

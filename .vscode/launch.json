@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Run app.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.py ",
+      "console": "integratedTerminal"
+    }
+  ]
+}
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "uvicorn bata run vayeko",
+//       "type": "python",
+//       "module": "uvicorn",
+//       "request": "launch",
+//       //   "program": "${workspaceFolder}/app.py",
+//       "console": "integratedTerminal",
+//       "args": ["app:app", "--reload"]
+//     }
+//   ]
+// }

@@ -1,0 +1,9 @@
+aiofiles
+jinja2
+# starlette
+starlette[full]
+# uvicorn
+uvicorn[standard]
+dependency-injector
+# starlette twilio
+twilio
